@@ -1,0 +1,4 @@
+class Tratador: public Funcionario
+{
+	
+}
