@@ -11,10 +11,10 @@ class Employee {
         int id;
         string name;
         string cpf;
-        short age;
-        short blood_type;
-        rh_factor char;
-        specialty string;
+        short int age;
+        string blood_type;
+        char rh_factor;
+        string specialty;
 
       // public:
       //     void setup(int first, int second) {
