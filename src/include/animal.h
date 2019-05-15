@@ -22,7 +22,10 @@ class Animal {
 
     public:
         Animal();
-        Animal(int p_id, string p_class_, string p_baptismal_name);
+        Animal(int c_id, string c_class_, string p_scientific_name,  
+               char c_gender, double c_size, string c_diet, 
+               string c_baptismal_name, Veterinary c_veterinary
+               Handler c_handler);
         ~Animal();
 
           // void setup(int first, int second) {
