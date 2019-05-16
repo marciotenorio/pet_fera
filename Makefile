@@ -4,6 +4,7 @@ INCLUDE = ./include
 LIB = ./lib
 OBJ = ./obj
 SRC = ./src
+DATA = ./data
 
 FLAGS = -O3 -Wall -std=c++11
 LIBS = -led -lm -L $(LIB)
@@ -12,8 +13,10 @@ all: libed app
 
 
 libed: \
+		$(OBJ)/employee.o \
 		$(OBJ)/handler.o \
-		$(OBJ)/veterinary.o
+		$(OBJ)/veterinary.o \
+		$(OBJ)/petfera.o
 		ar -rcs $(LIB)/libed.a $(OBJ)/*.o
 
 
@@ -35,3 +38,4 @@ run:
 clean:
 		rm $(OBJ)/*.o
 		rm $(BIN)/*
+		rm $(DATA)/*
