@@ -72,11 +72,11 @@ void Animal::set_diet(string diet){
 }
 
 string Animal::get_baptismal_name(){
-    return baptism_name;
+    return baptismal_name;
 }
 
 void Animal::set_baptismal_name(string baptism_name){
-    this->baptism_name = baptism_name;
+    this->baptismal_name = baptism_name;
 }
 
 Veterinary Animal::get_veterinary(){
@@ -132,15 +132,15 @@ istream &operator>>(istream &input, Animal &animal){
 }
 
 friend ostream &operator<<(ostream &output, const Animal &animal){
-    output << "ID: " <<animal.id<<endl;
-    output << "Classe: " <<animal.class_<<endl;
-    output << "Nome cientifico: " <<animal.scientific_name<<endl;
-    output << "Genero: " <<animal.gender<<endl;
-    output << "Tamanho: " <<animal.size<<endl;
-    output << "Dieta: " <<animal.diet<<endl;
-    output << "Nome de batismo: " <<animal.baptismal_name<<endl;
-    output << "Dados do veterinario: " << animal.veterinary<<endl;
-    output << "Dados do tratador: " << animal.handler<<endl;;
+    output << "ID: " << animal.id <<endl;
+    output << "Classe: " << animal.class_ <<endl;
+    output << "Nome cientifico: " << animal.scientific_name <<endl;
+    output << "Genero: " << animal.gender <<endl;
+    output << "Tamanho: " << animal.size <<endl;
+    output << "Dieta: " << animal.diet <<endl;
+    output << "Nome de batismo: " << animal.baptismal_name <<endl;
+    output << "Dados do veterinario: " << animal.veterinary <<endl;
+    output << "Dados do tratador: " << animal.handler <<endl;;
 
     return output;
 }

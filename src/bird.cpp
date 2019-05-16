@@ -34,4 +34,24 @@ void Bird::set_wingspan(double wingspan){
     this->wingspan = wingspan;
 }
 
+istream &operator>>(istream &input, Bird &bird){
+    cout<< "Insira os dados da ave: "<<endl;
+    input >> static_cast<Animal &>(bird);
+
+    cout<< "Tamanho do bico (cm): ";
+    input >> bird.nozzle_size_cm;
+
+    cout<< "Envergadura: ";
+    input >> bird.wingspan;
+
+    return input;
+}
+ostream &operator<<(ostream &output,const Bird &bird){
+    output << "<class Bird: " << bird.baptismal_name << ">" <<endl;
+    output << static_cast<const Animal &>(bird);
+    output << "Tamanho do bico (cm): " << bird.nozzle_size_cm <<endl;
+    output << "Envergadura: " << bird.wingspan <<endl;
+
+    return output;
+}
 

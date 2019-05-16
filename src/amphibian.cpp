@@ -36,7 +36,7 @@ void Amphibian::set_last_molt(time_t last_molt){
 
 istream &operator>>(istream &input, Amphibian &amphibian){
     cout<<"Insira os dados do anfibio: "<<endl;
-    input>>animal;
+    input>> static_cast<Animal &>(amphibian);
 
     cout<<"Total de mudas: ";
     input>>amphibian.total_seedlings;
@@ -47,9 +47,9 @@ istream &operator>>(istream &input, Amphibian &amphibian){
     return input;
 }
 
-ostream &operator<<(ostream &output, Amphibian &amphibian){
+ostream &operator<<(ostream &output,const Amphibian &amphibian){
     output << "<class Amphibian: " << amphibian.baptismal_name << ">" <<endl;
-    output << animal;
+    output << static_cast<const Animal &>(amphibian);
     output << "Total de mudas: " << amphibian.total_seedlings <<endl;
     output << "Data da ultima muda: " << amphibian.last_molt <<endl;
 
