@@ -21,10 +21,16 @@ class Animal {
         Handler handler;
         
         Animal();
-        Animal(int id, string class_, string scientific_name,  
-               char gender, double size, string diet, 
-               string baptismal_name, Veterinary veterinary
-               Handler handler);
+        Animal(
+            int id,
+            string class_, 
+            string scientific_name,  
+            char gender, 
+            double size,
+            string diet, 
+            string baptismal_name, 
+            Veterinary veterinary
+            Handler handler);
         //~Animal();
     public:
 
