@@ -9,6 +9,6 @@ class ExoticAnimal: public WildAnimal {
         string country_origin;
 
     public:
-        ExoticAnimal();
+        ExoticAnimal(string c_country_origin);
         ~ExoticAnimal();
 };

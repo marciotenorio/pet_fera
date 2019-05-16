@@ -9,6 +9,6 @@ class Mammal: public Animal {
         string hair_color;
 
     public:
-        Mammal();
+        Mammal(string c_hair_color);
         ~Mammal();
 };

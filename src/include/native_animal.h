@@ -10,6 +10,6 @@ class NativeAnimal: public WildAnimal {
         string authorization;
 
     public:
-        NativeAnimal();
+        NativeAnimal(string c_uf_origin, string c_authorization);
         ~NativeAnimal();
 };

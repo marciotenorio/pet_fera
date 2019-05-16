@@ -8,6 +8,6 @@ class WildAnimal {
         string ibama_authorization;
 
     public:
-        WildAnimal();
+        WildAnimal(string c_ibama_authorization);
         ~WildAnimal();
 };

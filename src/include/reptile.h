@@ -10,6 +10,6 @@ class Reptile: public Animal {
         string venom_type;
 
     public:
-        Reptile();
+        Reptile(bool c_venomous, string c_venom_type);
         ~Reptile();
 };
