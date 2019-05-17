@@ -29,10 +29,12 @@ friend istream &operator>>(istream &input, NativeAnimal &native_animal){
     input >> static_cast<WildAnimal &>(native_animal);
 
     cout<< "UF de origem: ";
-    input >> native_animal.uf_origin;
+    input.ignore();
+    getline(input, native_animal.uf_origin);
 
     cout<< "Autorização: ";
-    input >> native_animal.authorization;
+    input.ignore();
+    getline(input, native_animal.authorization);
 
     return input;
 }

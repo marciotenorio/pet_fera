@@ -21,7 +21,8 @@ istream &operator>>(istream &input, ExoticAnimal &exotic_animal){
     input >> static_cast<WildAnimal &>(exotic_animal);
 
     cout<< "Pais de origem: ";
-    input >> exotic_animal.country_origin;
+    input.ignore();
+    getline(input, exotic_animal.country_origin);
 
     return input;
 }

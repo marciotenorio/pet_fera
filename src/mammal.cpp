@@ -28,7 +28,8 @@ istream &operator>>(istream &input, Mammal &mammal){
     input >> static_cast<Animal &>(mammal);
 
     cout<< "Cor do pêlo: ";
-    input >> mammal.hair_color;
+    input.ignore();
+    getline(input, mammal.hair_color);
 
     return input;
 }

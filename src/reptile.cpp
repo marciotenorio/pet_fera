@@ -42,7 +42,8 @@ istream &operator>>(istream &input, Reptile &reptile){
     input >> reptile.venomous;
 
     cout<< "Tipo de veneno: ";
-    input >> reptile.venom_type;
+    input.ignore();
+    getline(input, reptile.venom_type);
 
     return input;
 }
