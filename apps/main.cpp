@@ -1,10 +1,8 @@
-#include <iostream>
+#include "petfera.h"
 
-using namespace std;
 
 int main(int argc, char const *argv[]) {
-    cout << "MAIN" << endl;
-    //ghioagsuoiag
+    menu();
 
     return 0;
 }
