@@ -2,7 +2,9 @@
 
 ExoticAnimal(
     string country_origin
-): WildAnimal(){
+): WildAnimal(
+    ibama_authorization
+){
     this->country_origin = country_origin;
 }
 

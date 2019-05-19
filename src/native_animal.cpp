@@ -3,7 +3,9 @@
 NativeAnimal(
     string uf_origin,
     string authorization
-):WildAnimal(){
+):WildAnimal(
+    ibama_authorization
+){
     this->uf_origin = uf_origin;
     this->authorization = authorization;
 }

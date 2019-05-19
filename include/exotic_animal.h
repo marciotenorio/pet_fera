@@ -4,7 +4,7 @@
 using namespace std;
 
 
-class ExoticAnimal: public WildAnimal {
+class ExoticAnimal: public WildAnimal { 
     protected:
         string country_origin;
 
