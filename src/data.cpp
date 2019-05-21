@@ -40,7 +40,7 @@ int load_data()
     NativeMammal native_mammal;
     NativeReptile native_reptile;
     
-
+    auto it;
 
     if( FILE_employee.bad() ){
         control++;
@@ -55,7 +55,7 @@ int load_data()
             * declare in menu function.
             * 
             * Load all data about Veterinary class in
-            * list<Handler> LIST_VETERINARY
+            * list<Veterinary> LIST_VETERINARY
             * declare in menu function.
             */            
 
@@ -94,18 +94,16 @@ int load_data()
                     info_veterinary.push_back(data);
                 }
 
-                auto it = info_veterinary.begin();
+                veterinary.set_id(++it);
+                veterinary.set_name(++it);
+                veterinary.set_cpf(++it);
+                veterinary.set_age(++it);
+                veterinry.set_blood_type(++it);
+                veterinary.set_rh_factor(++it);
+                veterinary.set_specialty(++it);
+                veterinary.set_crmv(++it);
 
-                veterinary.id = it;
-                veterinary.name = ++it;
-                veterinary.cpf = ++it;
-                veterinary.age = ++it;
-                veterinry.blood_type = ++it;
-                veterinary.rh_factor = ++it;
-                veterinary.specialty = ++it;
-                veterinary.security_level = ++it;
-
-                LIST_VETERINARY.push_front(handler);
+                LIST_VETERINARY.push_front(veterinary);
 
                 info_veterinary.clear();
 
@@ -122,11 +120,35 @@ int load_data()
     {
         while(FILE_animals >> line_data)
         {
-            if( line_data.find("Mamifero") != string::npos
-                                    |
-                line_data.find("mamifero") != string::npos )
+            /*
+            * Select Amphibian class type
+            */    
+            if( (line_data.find("Anfibio") && line_data.find("Exotico") ) 
+                                        !=
+                                   string::npos)
             {
+                while( getline(iss_line_data, data, ';'))
+                {
+                    info_exotic_amphibian.push_back(data);
+                }
+                
+                it = info_exotic_amphibian.begin();
 
+                exotic_amphibian.set_id(it);
+                exotic_amphibian.set_class_(++it);
+                exotic_amphibian.set_scientific_name(++it);
+                exotic_amphibian.set_gender(++it);
+                exotic_amphibian.set_size(++it);
+                exotic_amphibian.set_diet(++it);
+                exotic_amphibian.set_baptismal_name(++it);
+                exotic_amphibian.set_total_seedlings(++it);
+                exotic_amphibian.set_last_molt(++it);
+                exotic_amphibian.set_country_origin(++it);
+
+
+                LIST_EXOTIC_AMPHIBIAN.push_front(exotic_amphibian);
+
+                info_exotic_amphibian.clear();
             }
         }
     }
