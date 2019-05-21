@@ -1,7 +1,10 @@
 #include "animal.h"
 #include <iostream>
 
-Animal::Animal(int id, string class_,
+Animal::Animal(
+    int id,
+    string employee_name,
+    string class_,
     string scientific_name,  
     char gender,
     double size, 
@@ -10,7 +13,8 @@ Animal::Animal(int id, string class_,
     Veterinary veterinary,
     Handler handler
 ){
-    this->id = id; 
+    this->id = id;
+    this->employee_name = employee_name; 
     this->class_ = class_; 
     this->scientific_name = scientific_name;
     this->gender = gender;
@@ -29,6 +33,14 @@ int Animal::get_id(){
 
 void Animal::set_id(int id){
     this->id = id;
+}
+
+string Animal::get_employee_name(){
+    return employee_name;
+}
+
+void Animal::set_employee_name(string employee_name){
+    this->employee_name = employee_name;
 }
 
 string Animal::get_class_(){
@@ -99,6 +111,10 @@ istream &operator>>(istream &input, Animal &animal){
     cout<<"ID: ";
     input>>animal.id;
 
+    cout<<"Nome do funcionario responsavel: ";
+    input.ignore();
+    getline(input, animal.employee_name);
+
     cout<<"Classe: ";
     input.ignore();
     getline(input, animal.class_);
@@ -131,8 +147,9 @@ istream &operator>>(istream &input, Animal &animal){
     return input;
 }
 
-friend ostream &operator<<(ostream &output, const Animal &animal){
+ostream &operator<<(ostream &output, const Animal &animal){
     output << "ID: " << animal.id <<endl;
+    output << "Nome do funcionario responsavel: " << animal.employee_name <<endl;
     output << "Classe: " << animal.class_ <<endl;
     output << "Nome cientifico: " << animal.scientific_name <<endl;
     output << "Genero: " << animal.gender <<endl;

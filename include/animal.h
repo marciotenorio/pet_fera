@@ -11,6 +11,7 @@ using namespace std;
 class Animal {
     protected:
         int id;
+        string employee_name;
         string class_;
         string scientific_name;
         char gender;
@@ -23,6 +24,7 @@ class Animal {
         Animal();
         Animal(
             int id,
+            string employee_name;
             string class_, 
             string scientific_name,  
             char gender, 
@@ -36,6 +38,8 @@ class Animal {
 
         int get_id();
         void set_id(int id);
+        string get_employee_name();
+        void set_employee_name(string employee_name);
         string get_class_();
         void set_class_(string class_);
         string get_scientific_name();

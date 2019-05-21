@@ -5,6 +5,7 @@ Bird::Bird(
     double wingspan
 ): Animal(
     id,
+    employee_name,
     class_, 
     scientific_name, 
     gender,

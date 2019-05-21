@@ -9,7 +9,7 @@ class Reptile: public Animal {
         bool venomous;
         string venom_type;
 
-        Reptile(bool c_venomous, string c_venom_type);
+        Reptile(bool venomous, string venom_type);
         //~Reptile();
     public:
         bool get_venomous();

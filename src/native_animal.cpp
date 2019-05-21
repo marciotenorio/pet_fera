@@ -2,7 +2,8 @@
 
 NativeAnimal(
     string uf_origin,
-    string authorization
+    string authorization,
+    type
 ):WildAnimal(
     ibama_authorization
 ){
@@ -10,23 +11,27 @@ NativeAnimal(
     this->authorization = authorization;
 }
 
-string get_uf_origin(){
+string NativeAnimal::get_uf_origin(){
     return uf_origin;
 }
 
-void set_uf_origin(string uf_origin){
+void NativeAnimal::set_uf_origin(string uf_origin){
     this->uf_origin = uf_origin;
 }
 
-string get_authorization(){
+string NativeAnimal::get_authorization(){
     return authorization;
 }
 
-void set_authorization(string authorization){
+void NativeAnimal::set_authorization(string authorization){
     this->authorization = authorization;
 }
 
-friend istream &operator>>(istream &input, NativeAnimal &native_animal){
+string NativeAnimal::get_type(){
+    return type;
+}
+
+istream &operator>>(istream &input, NativeAnimal &native_animal){
     cout<< "Insira os dados do animal nativo: " <<endl;
     input >> static_cast<WildAnimal &>(native_animal);
 
@@ -40,7 +45,8 @@ friend istream &operator>>(istream &input, NativeAnimal &native_animal){
 
     return input;
 }
-friend ostream &operator<<(ostream &output, const NativeAnimal &native_animal){
+
+ostream &operator<<(ostream &output, const NativeAnimal &native_animal){
     output << "<class NativeAnimal: " << native_animal.baptismal_name << ">" <<endl;
     output << static_cast<const WildAnimal&>(native_animal);
     output << "UF de origem: " << native_animal.uf_origin << endl;

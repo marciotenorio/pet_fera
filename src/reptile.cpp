@@ -5,6 +5,7 @@ Reptile::Reptile(
     string venom_tye
 ): Animal(
     id,
+    employee_name,
     class_,
     scientific_name,
     gender,
@@ -18,19 +19,19 @@ Reptile::Reptile(
     this->venom_type = venom_type;
 }
 
-bool get_venomous(){
+bool Reptile::get_venomous(){
     return venomous;
 }
 
-void set_venomous(bool venomous){
+void Reptile::set_venomous(bool venomous){
     this->venomous = venomous;
 }
 
-string get_venom_type(){
+string Reptile::get_venom_type(){
     return venom_type;
 }
 
-void set_venom_type(string venom_type){
+void Reptile::set_venom_type(string venom_type){
     this->venom_type = venom_type;
 }
 

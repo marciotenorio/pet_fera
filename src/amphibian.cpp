@@ -5,6 +5,7 @@ Amphibian::Amphibian(
     time_t last_molt
 ): Animal(
     id,
+    employee_name,
     class_, 
     scientific_name, 
     gender,

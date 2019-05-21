@@ -3,7 +3,7 @@
 using namespace std;
 
 
-class WildAnimal: public NativeAnimal, public ExoticAnimal{
+class WildAnimal{
     protected:
         string ibama_authorization;
 

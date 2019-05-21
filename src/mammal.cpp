@@ -3,6 +3,7 @@
 Mammal::Mammal(string hair_color)
 :Animal(
     id,
+    employee_name,
     class_,
     scientific_name,
     gender,

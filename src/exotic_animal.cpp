@@ -1,7 +1,8 @@
 #include "exotic_animal.h"
 
 ExoticAnimal(
-    string country_origin
+    string country_origin,
+    type
 ): WildAnimal(
     ibama_authorization
 ){
@@ -10,12 +11,16 @@ ExoticAnimal(
 
 //~ExoticAnimal(){}
 
-string get_country_origin(){
+string ExoticAnimal::get_country_origin(){
     return country_origin;
 }
 
-void set_country_origin(string country_origin){
+void ExoticAnimal::set_country_origin(string country_origin){
     this->country_origin = country_origin;
+}
+
+string ExoticAnimal::get_type(){
+    return type;
 }
 
 istream &operator>>(istream &input, ExoticAnimal &exotic_animal){
