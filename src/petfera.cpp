@@ -17,7 +17,7 @@ void create_handler() {
     Handler handler;
     cin >> handler;
     cout << handler << endl;
-    &write_handler(handler);
+    handler.write_in_csv();
     call_menu();
 }
 
@@ -25,7 +25,7 @@ void create_veterinary() {
     Veterinary veterinary;
     cin >> veterinary;
     cout << veterinary << endl;
-    &write_veterinary(veterinary);
+    veterinary.write_in_csv();
     call_menu();
 }
 

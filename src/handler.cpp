@@ -34,39 +34,82 @@ void Handler::set_security_level(short security_level) {
     this->security_level = security_level;
 }
 
-void Handler::write_handler(const Handler &handler){
+string Handler::format_csv() {
+    // string result;
+    // result = strcatid + string(";")
+    //     + string("Tratador") + ";"
+    //     + name + ";"
+    //     + cpf + ";"
+    //     + age + ";"
+    //     + blood_type + ";"
+    //     + rh_factor + ";"
+    //     + specialty + ";"
+    //     + string("") + ";"
+    //     + security_level + ";"
+    //     + "\n";
 
-    ofstream FILE;
-    FILE.open("../data/handler.csv", std::ios::app);
-    FILE << handler.id;
-    FILE << ";";
+    return to_string(id) + ";"
+           + "Tratador" + ";"
+           + name + ";"
+           + cpf + ";"
+           + to_string(age) + ";"
+           + blood_type + ";"
+           + to_string(rh_factor) + ";"
+           + specialty + ";"
+           + ";"
+           + to_string(security_level) + ";\n";
+}
 
-    FILE << handler.name;
-    FILE << ";";
+void Handler::write_in_csv() {
 
-    FILE << handler.cpf;
-    FILE << ";";
+    fstream fout;
 
-    FILE << handler.age;
-    FILE << ";";
+    fout.open("data/employees.csv", ios::out | ios::app);
 
-    FILE << handler.blood_type;
-    FILE << ";";
+    fout << id << ";"
+         << "Tratador" << ";"
+         << name << ";"
+         << cpf << ";"
+         << age << ";"
+         << blood_type << ";"
+         << rh_factor << ";"
+         << specialty << ";"
+         << "" << ";"
+         << security_level << ";"
+         << "\n";
 
-    FILE << handler.rh_factor;
-    FILE << ";";
+    // ofstream FILE;
+    // FILE.open("../data/handler.csv", std::ios::app);
 
-    FILE << handler.specialty;
-    FILE << ";";
+    // FILE << id;
+    // FILE << ";";
+    //
+    // FILE << name;
+    // FILE << ";";
+    //
+    // FILE << cpf;
+    // FILE << ";";
+    //
+    // FILE << age;
+    // FILE << ";";
+    //
+    // FILE << blood_type;
+    // FILE << ";";
+    //
+    // FILE << rh_factor;
+    // FILE << ";";
+    //
+    // FILE << specialty;
+    // FILE << ";";
+    //
+    // FILE << security_level;
+    // FILE << ";";
+    //
+    // FILE << endl;
+    //
+    // FILE.close();
 
-    FILE << handler.security_level;
-    FILE << ";";
-
-    FILE << endl;
-
-    FILE.close();
-
-}    
+}
 
 istream &operator>>(istream &input,  Handler &handler) {
     cout << "Insira os dados do tratador:" << endl;
@@ -84,5 +127,4 @@ ostream &operator<<(ostream &output, const Handler &handler) {
     output << "Nível de Segurança: " << handler.security_level << endl;
 
     return output;
-}    
-
+}

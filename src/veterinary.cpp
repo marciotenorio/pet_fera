@@ -33,41 +33,80 @@ void Veterinary::set_crmv(string crmv) {
     this->crmv = crmv;
 }
 
-void Veterinary::write_veterinary(const Veterinary &veterinary){
+string Veterinary::format_csv() {
+    // string result;
+    // result = id + string(";")
+    //     + string("Veterinário") + ";"
+    //     + name + ";"
+    //     + cpf + ";"
+    //     + age + ";"
+    //     + blood_type + ";"
+    //     + rh_factor + ";"
+    //     + specialty + ";"
+    //     + crmv + ";"
+    //     + string("") + ";"
+    //     + "\n";
+    return to_string(id) + ";"
+           + "Veterinário" + ";"
+           + name + ";"
+           + cpf + ";"
+           + to_string(age) + ";"
+           + blood_type + ";"
+           + to_string(rh_factor) + ";"
+           + specialty + ";"
+           + crmv + ";"
+           + ";\n";
+}
 
-    ofstream FILE;
-    FILE.open("../data/veterinary.csv", std::ios::app);
+void Veterinary::write_in_csv() {
+    fstream fout;
 
-    FILE << veterinary.id;
-    FILE << ";";
+    fout.open("data/employees.csv", ios::out | ios::app);
 
-    FILE << veterinary.name;
-    FILE << ";";
+    fout << id << ";"
+         << "Veterinário" << ";"
+         << name << ";"
+         << cpf << ";"
+         << age << ";"
+         << blood_type << ";"
+         << rh_factor << ";"
+         << specialty << ";"
+         << crmv << ";"
+         << "" << ";"
+         << "\n";
+    // ofstream FILE;
+    // FILE.open("../data/veterinary.csv", std::ios::app);
+    //
+    // FILE << id;
+    // FILE << ";";
+    //
+    // FILE << name;
+    // FILE << ";";
+    //
+    // FILE << cpf;
+    // FILE << ";";
+    //
+    // FILE << age;
+    // FILE << ";";
+    //
+    // FILE << blood_type;
+    // FILE << ";";
+    //
+    // FILE << rh_factor;
+    // FILE << ";";
+    //
+    // FILE << specialty;
+    // FILE << ";";
+    //
+    // FILE << crmv;
+    // FILE << ";";
+    //
+    // FILE << endl;
+    //
+    // FILE.flush();
+    // FILE.close();
 
-    FILE << veterinary.cpf;
-    FILE << ";";
-
-    FILE << veterinary.age;
-    FILE << ";";
-
-    FILE << veterinary.blood_type;
-    FILE << ";";
-
-    FILE << veterinary.rh_factor;
-    FILE << ";";
-
-    FILE << veterinary.specialty;
-    FILE << ";";
-
-    FILE << veterinary.crmv;
-    FILE << ";";
-
-    FILE << endl;
-
-    FILE.flush();
-    FILE.close();
-
-}    
+}
 
 istream &operator>>(istream &input,  Veterinary &veterinary) {
     cout << "Insira os dados do veterinário:" << endl;
@@ -86,5 +125,3 @@ ostream &operator<<(ostream &output, const Veterinary &veterinary) {
 
     return output;
 }
-
-

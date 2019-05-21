@@ -31,7 +31,8 @@ class Handler: public Employee {
         void set_security_level(short security_level);
         friend istream &operator>>(istream &input,  Handler &handler);
         friend ostream &operator<<(ostream &output, const Handler &handler);
-        void write_handler(const Handler &handler);
+        void write_in_csv();
+        string format_csv();
 };
 
 #endif
