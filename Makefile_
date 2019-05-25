@@ -34,8 +34,8 @@ $(BIN)/%: $(APPS)/%.cpp
 run:
 		$(BIN)/main
 
-
 clean:
 		rm $(OBJ)/*.o
 		rm $(BIN)/*
 		rm $(LIB)/*
+		rm $(DATA)/*

@@ -27,6 +27,7 @@ class Veterinary: public Employee {
         // ~Veterinary();
         string get_crmv();
         void set_crmv(string crmv);
+        string format_csv();
         friend istream &operator>>(istream &input,  Veterinary &veterinary);
         friend ostream &operator<<(ostream &output, const Veterinary &veterinary);
 };

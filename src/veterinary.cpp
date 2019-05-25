@@ -33,6 +33,19 @@ void Veterinary::set_crmv(string crmv) {
     this->crmv = crmv;
 }
 
+string Veterinary::format_csv() {
+    return to_string(id) + ";"
+           + "Veterinário" + ";"
+           + name + ";"
+           + cpf + ";"
+           + to_string(age) + ";"
+           + blood_type + ";"
+           + to_string(rh_factor) + ";"
+           + specialty + ";"
+           + crmv + ";"
+           + ";\n";
+}
+
 istream &operator>>(istream &input,  Veterinary &veterinary) {
     cout << "Insira os dados do veterinário:" << endl;
     input >> static_cast<Employee &>(veterinary);

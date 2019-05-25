@@ -33,6 +33,19 @@ void Handler::set_security_level(short security_level) {
     this->security_level = security_level;
 }
 
+string Handler::format_csv() {
+    return to_string(id) + ";"
+           + "Tratador" + ";"
+           + name + ";"
+           + cpf + ";"
+           + to_string(age) + ";"
+           + blood_type + ";"
+           + to_string(rh_factor) + ";"
+           + specialty + ";"
+           + ";"
+           + to_string(security_level) + ";\n";
+}
+
 istream &operator>>(istream &input,  Handler &handler) {
     cout << "Insira os dados do tratador:" << endl;
     input >> static_cast<Employee &>(handler);
