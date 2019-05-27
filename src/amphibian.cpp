@@ -1,19 +1,19 @@
 #include "amphibian.h"
+#include <iostream>
 
 Amphibian::Amphibian(
     int total_seedlings,
-    time_t last_molt
-): Animal(
+    string last_molt
+):Animal(
     id,
-    employee_name,
     class_, 
     scientific_name, 
     gender,
     size,
     diet,
-    baptism_name,
-    veterinary,
-    handler
+    baptismal_name,
+    veterinary_id,
+    handler_id
 ){
     this->total_seedlings = total_seedlings;
     this->last_molt = last_molt;
@@ -27,11 +27,11 @@ void Amphibian::set_total_seedlings(int total_seedlings){
     this->total_seedlings = total_seedlings;
 }
 
-time_t Amphibian::get_last_molt(){
+string Amphibian::get_last_molt(){
     return last_molt;
 }
 
-void Amphibian::set_last_molt(time_t last_molt){
+void Amphibian::set_last_molt(string last_molt){
     this->last_molt = last_molt;
 }
 
@@ -43,7 +43,8 @@ istream &operator>>(istream &input, Amphibian &amphibian){
     input>>amphibian.total_seedlings;
 
     cout<<"Data da ultima muda: ";
-    input>>amphibian.last_molt;
+    input.ignore();
+    getline(input, amphibian.last_molt);
 
     return input;
 }

@@ -1,19 +1,19 @@
 #include "bird.h"
+#include <iostream>
 
 Bird::Bird(
     double nozzle_size_cm,
     double wingspan
 ): Animal(
     id,
-    employee_name,
     class_, 
     scientific_name, 
     gender,
     size,
     diet,
-    baptism_name,
-    veterinary,
-    handler
+    baptismal_name,
+    veterinary_id,
+    handler_id
 ){
     this->nozzle_size_cm = nozzle_size_cm;
     this->wingspan = wingspan;

@@ -16,8 +16,8 @@ istream &operator>>(istream &input, ExoticMammal &exotic_mammal){
     return input;
 }
 ostream &operator<<(ostream &output, const ExoticMammal &exotic_mammal){
-    output >> static_cast<const ExoticAnimal &>(exotic_mammal);
-    output >> static_cast<const Mammal &>(exotic_mammal);
+    output << static_cast<const ExoticAnimal &>(exotic_mammal);
+    output << static_cast<const Mammal &>(exotic_mammal);
 
     return output;
 }

@@ -3,26 +3,24 @@
 
 Animal::Animal(
     int id,
-    string employee_name,
     string class_,
     string scientific_name,  
     char gender,
     double size, 
     string diet, 
     string baptismal_name, 
-    Veterinary veterinary,
-    Handler handler
+    int veterinary_id,
+    int handler_id
 ){
     this->id = id;
-    this->employee_name = employee_name; 
     this->class_ = class_; 
     this->scientific_name = scientific_name;
     this->gender = gender;
     this->size = size;
     this->diet = diet;
     this->baptismal_name = baptismal_name;
-    this->veterinary = veterinary;
-    this->handler = handler;
+    this->veterinary_id = veterinary_id;
+    this->handler_id = handler_id;
 }
 
 //Animal::~Animal(){}
@@ -33,14 +31,6 @@ int Animal::get_id(){
 
 void Animal::set_id(int id){
     this->id = id;
-}
-
-string Animal::get_employee_name(){
-    return employee_name;
-}
-
-void Animal::set_employee_name(string employee_name){
-    this->employee_name = employee_name;
 }
 
 string Animal::get_class_(){
@@ -91,29 +81,25 @@ void Animal::set_baptismal_name(string baptism_name){
     this->baptismal_name = baptism_name;
 }
 
-Veterinary Animal::get_veterinary(){
-    return veterinary;
+int Animal::get_veterinary_id(){
+    return veterinary_id;
 }
 
-void Animal::set_veterinary(Veterinary veterinary){
-    this->veterinary = veterinary;
+void Animal::set_veterinary_id(int veterinary_id){
+    this->veterinary_id = veterinary_id;
 }
 
-Handler Animal::get_handler(){
-    return handler;
+int Animal::get_handler_id(){
+    return handler_id;
 }
 
-void Animal::set_handler(Handler handler){
-    this->handler = handler;
+void Animal::set_handler_id(int handler_id){
+    this->handler_id = handler_id;
 } 
 
 istream &operator>>(istream &input, Animal &animal){
     cout<<"ID: ";
     input>>animal.id;
-
-    cout<<"Nome do funcionario responsavel: ";
-    input.ignore();
-    getline(input, animal.employee_name);
 
     cout<<"Classe: ";
     input.ignore();
@@ -123,9 +109,8 @@ istream &operator>>(istream &input, Animal &animal){
     input.ignore();
     getline(input, animal.scientific_name);
 
-    cout<<"Genero: ";
-    input.ignore();
-    getline(input, animal.gender);
+    cout<<"Gênero: ";
+    input>>animal.gender;
 
     cout<<"Tamanho: ";
     input>>animal.size;
@@ -138,26 +123,25 @@ istream &operator>>(istream &input, Animal &animal){
     input.ignore();
     getline(input, animal.baptismal_name);
 
-    cout<<"Dados do veterinario: ";
-    input>>animal.veterinary;
+    cout<<"ID do veterinário responsável: ";
+    input>>animal.veterinary_id;
 
-    cout<<"Dados do tratador: ";
-    input>>animal.handler;
+    cout<<"ID do tratador responsável: ";
+    input>>animal.handler_id;
 
     return input;
 }
 
 ostream &operator<<(ostream &output, const Animal &animal){
     output << "ID: " << animal.id <<endl;
-    output << "Nome do funcionario responsavel: " << animal.employee_name <<endl;
     output << "Classe: " << animal.class_ <<endl;
     output << "Nome cientifico: " << animal.scientific_name <<endl;
     output << "Genero: " << animal.gender <<endl;
     output << "Tamanho: " << animal.size <<endl;
     output << "Dieta: " << animal.diet <<endl;
     output << "Nome de batismo: " << animal.baptismal_name <<endl;
-    output << "Dados do veterinario: " << animal.veterinary <<endl;
-    output << "Dados do tratador: " << animal.handler <<endl;;
+    output << "ID do veterinário responsável: " << animal.veterinary_id <<endl;
+    output << "ID do tratador responsável: " << animal.handler_id <<endl;;
 
     return output;
 }

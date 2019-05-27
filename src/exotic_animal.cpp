@@ -1,9 +1,9 @@
 #include "exotic_animal.h"
 
-ExoticAnimal(
-    string country_origin,
-    type
-): WildAnimal(
+
+ExoticAnimal::ExoticAnimal(
+    string country_origin
+):WildAnimal(
     ibama_authorization
 ){
     this->country_origin = country_origin;
@@ -19,12 +19,8 @@ void ExoticAnimal::set_country_origin(string country_origin){
     this->country_origin = country_origin;
 }
 
-string ExoticAnimal::get_type(){
-    return type;
-}
-
 istream &operator>>(istream &input, ExoticAnimal &exotic_animal){
-    cout<< "Insira os dados do animal exótico: "<<endl;
+    cout<< "Insira os dados do animal exótico: "<< endl;
     input >> static_cast<WildAnimal &>(exotic_animal);
 
     cout<< "Pais de origem: ";
@@ -35,7 +31,7 @@ istream &operator>>(istream &input, ExoticAnimal &exotic_animal){
 }
 
 ostream &operator<<(ostream &output, const ExoticAnimal &exotic_animal){
-    output << "<class ExoticAnimal: " << exotic_animal.baptismal_name << ">" <<endl;
+    //output << "<class ExoticAnimal: " << exotic_animal.baptismal_name << ">" <<endl;
     output << static_cast<const WildAnimal &>(exotic_animal);
 
     output << "Pais de origem: " << exotic_animal.country_origin <<endl;

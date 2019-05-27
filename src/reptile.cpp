@@ -1,19 +1,19 @@
 #include "reptile.h"
+#include <iostream>
 
 Reptile::Reptile(
     bool venomous,
     string venom_tye
 ): Animal(
     id,
-    employee_name,
     class_,
     scientific_name,
     gender,
     size,
     diet,
     baptismal_name,
-    veterinary,
-    handler
+    veterinary_id,
+    handler_id
 ){
     this->venomous = venomous;
     this->venom_type = venom_type;

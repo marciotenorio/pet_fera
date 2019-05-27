@@ -8,7 +8,7 @@ class Mammal: public Animal {
     protected:
         string hair_color;
 
-        Mammal(string c_hair_color);
+        Mammal(string hair_color);
         //~Mammal();
     public:
         string get_hair_color();
