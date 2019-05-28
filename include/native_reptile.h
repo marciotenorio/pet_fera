@@ -5,7 +5,7 @@
 class NativeReptile: public NativeAnimal, public Reptile {
     public:
         NativeReptile();
-        ~NativeReptile();
+        string format_csv();
         friend istream &operator>>(istream &input, NativeReptile &native_reptile);
         friend ostream &operator<<(ostream &output, const NativeReptile &native_reptile);
 };
