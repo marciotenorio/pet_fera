@@ -4,10 +4,10 @@
 
 class Amphibian: public Animal {
     protected:
-        int total_seedlings;
-        time_t last_molt;
+        int total_seedlings; //Atributos inerentes a classe anfibios
+        time_t last_molt; //Atributos inerentes a classe anfibios
 
     public:
-        Amphibian();
-        ~Amphibian();
+        Amphibian(); //Construtor padrão da classe anfibios
+        ~Amphibian(); //Destrutor da classe anfibios
 };

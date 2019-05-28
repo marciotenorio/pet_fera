@@ -2,7 +2,7 @@
 #include <string>
 #include "employee.h"
 #include "veterinary.h"
-#include <fstream>
+
 using namespace std;
 
 
@@ -34,18 +34,6 @@ void Veterinary::set_crmv(string crmv) {
 }
 
 string Veterinary::format_csv() {
-    // string result;
-    // result = id + string(";")
-    //     + string("Veterinário") + ";"
-    //     + name + ";"
-    //     + cpf + ";"
-    //     + age + ";"
-    //     + blood_type + ";"
-    //     + rh_factor + ";"
-    //     + specialty + ";"
-    //     + crmv + ";"
-    //     + string("") + ";"
-    //     + "\n";
     return to_string(id) + ";"
            + "Veterinário" + ";"
            + name + ";"
@@ -56,56 +44,6 @@ string Veterinary::format_csv() {
            + specialty + ";"
            + crmv + ";"
            + ";\n";
-}
-
-void Veterinary::write_in_csv() {
-    fstream fout;
-
-    fout.open("data/employees.csv", ios::out | ios::app);
-
-    fout << id << ";"
-         << "Veterinário" << ";"
-         << name << ";"
-         << cpf << ";"
-         << age << ";"
-         << blood_type << ";"
-         << rh_factor << ";"
-         << specialty << ";"
-         << crmv << ";"
-         << "" << ";"
-         << "\n";
-    // ofstream FILE;
-    // FILE.open("../data/veterinary.csv", std::ios::app);
-    //
-    // FILE << id;
-    // FILE << ";";
-    //
-    // FILE << name;
-    // FILE << ";";
-    //
-    // FILE << cpf;
-    // FILE << ";";
-    //
-    // FILE << age;
-    // FILE << ";";
-    //
-    // FILE << blood_type;
-    // FILE << ";";
-    //
-    // FILE << rh_factor;
-    // FILE << ";";
-    //
-    // FILE << specialty;
-    // FILE << ";";
-    //
-    // FILE << crmv;
-    // FILE << ";";
-    //
-    // FILE << endl;
-    //
-    // FILE.flush();
-    // FILE.close();
-
 }
 
 istream &operator>>(istream &input,  Veterinary &veterinary) {

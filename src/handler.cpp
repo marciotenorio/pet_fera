@@ -2,8 +2,7 @@
 #include <string>
 #include "employee.h"
 #include "handler.h"
-#include <fstream>
-#include "petfera.h"
+
 using namespace std;
 
 
@@ -35,19 +34,6 @@ void Handler::set_security_level(short security_level) {
 }
 
 string Handler::format_csv() {
-    // string result;
-    // result = strcatid + string(";")
-    //     + string("Tratador") + ";"
-    //     + name + ";"
-    //     + cpf + ";"
-    //     + age + ";"
-    //     + blood_type + ";"
-    //     + rh_factor + ";"
-    //     + specialty + ";"
-    //     + string("") + ";"
-    //     + security_level + ";"
-    //     + "\n";
-
     return to_string(id) + ";"
            + "Tratador" + ";"
            + name + ";"
@@ -58,57 +44,6 @@ string Handler::format_csv() {
            + specialty + ";"
            + ";"
            + to_string(security_level) + ";\n";
-}
-
-void Handler::write_in_csv() {
-
-    fstream fout;
-
-    fout.open("data/employees.csv", ios::out | ios::app);
-
-    fout << id << ";"
-         << "Tratador" << ";"
-         << name << ";"
-         << cpf << ";"
-         << age << ";"
-         << blood_type << ";"
-         << rh_factor << ";"
-         << specialty << ";"
-         << "" << ";"
-         << security_level << ";"
-         << "\n";
-
-    // ofstream FILE;
-    // FILE.open("../data/handler.csv", std::ios::app);
-
-    // FILE << id;
-    // FILE << ";";
-    //
-    // FILE << name;
-    // FILE << ";";
-    //
-    // FILE << cpf;
-    // FILE << ";";
-    //
-    // FILE << age;
-    // FILE << ";";
-    //
-    // FILE << blood_type;
-    // FILE << ";";
-    //
-    // FILE << rh_factor;
-    // FILE << ";";
-    //
-    // FILE << specialty;
-    // FILE << ";";
-    //
-    // FILE << security_level;
-    // FILE << ";";
-    //
-    // FILE << endl;
-    //
-    // FILE.close();
-
 }
 
 istream &operator>>(istream &input,  Handler &handler) {

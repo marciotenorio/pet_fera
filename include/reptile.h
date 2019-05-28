@@ -4,12 +4,12 @@
 using namespace std;
 
 
-class Reptile: public Animal {
+class Reptile: public Animal { // Classe Réptil herda os atributos da classe Animal
     protected:
-        bool venomous;
-        string venom_type;
+        bool venomous; //Atributo inerente a classe Réptil
+        string venom_type; //Atributo inerente a classe Réptil
 
     public:
-        Reptile();
-        ~Reptile();
+        Reptile(); //Construtor da classe Réptil
+        ~Reptile(); //Destrutor da classe Réptil
 };
