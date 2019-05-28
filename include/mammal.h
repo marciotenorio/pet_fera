@@ -9,7 +9,7 @@ class Mammal: public Animal {
         string hair_color;
 
         Mammal(string hair_color);
-        //~Mammal();
+        Mammal();
     public:
         string get_hair_color();
         void set_hair_color(string hair_color);

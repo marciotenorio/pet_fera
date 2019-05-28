@@ -8,7 +8,7 @@ class ExoticAnimal: public WildAnimal {
         string country_origin;
     public:
         ExoticAnimal(string country_origin);
-        ~ExoticAnimal();
+        ExoticAnimal();
         string get_country_origin();
         void set_country_origin(string country_origin);
         friend istream &operator>>(istream &input, ExoticAnimal &exotic_animal);

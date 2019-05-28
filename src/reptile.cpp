@@ -1,6 +1,11 @@
 #include "reptile.h"
 #include <iostream>
 
+Reptile::Reptile():Animal(){
+    venomous = false;
+    venom_type = "";
+}
+
 Reptile::Reptile(
     bool venomous,
     string venom_tye

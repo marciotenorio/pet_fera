@@ -1,6 +1,11 @@
 #include "amphibian.h"
 #include <iostream>
 
+Amphibian::Amphibian():Animal(){
+    total_seedlings = 0;
+    last_molt = "";
+}
+
 Amphibian::Amphibian(
     int total_seedlings,
     string last_molt

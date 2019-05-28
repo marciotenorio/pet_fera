@@ -1,5 +1,8 @@
 #include "exotic_animal.h"
 
+ExoticAnimal::ExoticAnimal():WildAnimal(){
+    country_origin = "";
+}
 
 ExoticAnimal::ExoticAnimal(
     string country_origin

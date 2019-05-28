@@ -6,10 +6,11 @@ class Amphibian: public Animal {
     protected:
         int total_seedlings;
         string last_molt;
-        //~Amphibian();
+        
+        Amphibian(int total_seedlings, string last_molt);
+        Amphibian();
 
     public:
-        Amphibian(int total_seedlings, string last_molt);
         int get_total_seedlings();
         void set_total_seedlings(int total_seedlings);
         string get_last_molt();

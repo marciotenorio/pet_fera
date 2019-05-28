@@ -4,10 +4,28 @@ ExoticAmphibian::ExoticAmphibian(
 
 ):ExoticAnimal(
     country_origin
-):Amphibian(
+),Amphibian(
     total_seedlings,
     last_molt
 ){}
+
+
+string ExoticAmphibian::format_csv(){
+    return to_string(id) + ";"
+           + class_ + ";"
+           + scientific_name + ";"
+           + to_string(gender) + ";"
+           + to_string(size) + ";"
+           + diet + ";"
+           + baptismal_name + ";"
+           + to_string(veterinary_id) + ";"
+           + to_string(handler_id) + ";"
+           + to_string(total_seedlings) + ";"
+           + last_molt + ";"
+           + country_origin + ";"
+           + ibama_authorization + ";"
+           + "\n";
+}
 
 istream &operator>>(istream &input, ExoticAmphibian &exotic_amphibian){  
     input >> static_cast<ExoticAnimal &>(exotic_amphibian);    

@@ -1,6 +1,11 @@
 #include "bird.h"
 #include <iostream>
 
+Bird::Bird():Animal(){
+    nozzle_size_cm = 0;
+    wingspan = 0;
+}
+
 Bird::Bird(
     double nozzle_size_cm,
     double wingspan

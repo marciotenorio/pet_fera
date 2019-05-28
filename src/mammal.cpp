@@ -1,6 +1,10 @@
 #include "mammal.h"
 #include <iostream>
 
+Mammal::Mammal():Animal(){
+    hair_color = "";
+}
+
 Mammal::Mammal(string hair_color)
 :Animal(
     id,

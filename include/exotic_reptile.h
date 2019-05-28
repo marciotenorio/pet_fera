@@ -5,7 +5,7 @@
 class ExoticReptile: public ExoticAnimal, public Reptile {
     public:
         ExoticReptile();
-        ~ExoticReptile();
-        friend istream &operator>>(istream &input, ExoticMammal &exotic_mammal);
-        friend ostream &operator<<(ostream &output, const ExoticMammal &exotic_mammal);
+        string format_csv();
+        friend istream &operator>>(istream &input, ExoticReptile &exotic_reptile);
+        friend ostream &operator<<(ostream &output, const ExoticReptile &exotic_reptile);
 };

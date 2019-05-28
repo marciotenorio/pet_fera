@@ -1,9 +1,8 @@
 #include "native_animal.h"
 
-NativeAnimal(
+NativeAnimal::NativeAnimal(
     string uf_origin,
-    string authorization,
-    type
+    string authorization
 ):WildAnimal(
     ibama_authorization
 ){
@@ -27,10 +26,6 @@ void NativeAnimal::set_authorization(string authorization){
     this->authorization = authorization;
 }
 
-string NativeAnimal::get_type(){
-    return type;
-}
-
 istream &operator>>(istream &input, NativeAnimal &native_animal){
     cout<< "Insira os dados do animal nativo: " <<endl;
     input >> static_cast<WildAnimal &>(native_animal);
@@ -47,7 +42,6 @@ istream &operator>>(istream &input, NativeAnimal &native_animal){
 }
 
 ostream &operator<<(ostream &output, const NativeAnimal &native_animal){
-    output << "<class NativeAnimal: " << native_animal.baptismal_name << ">" <<endl;
     output << static_cast<const WildAnimal&>(native_animal);
     output << "UF de origem: " << native_animal.uf_origin << endl;
     output << "Autorização: " << native_animal.authorization << endl;

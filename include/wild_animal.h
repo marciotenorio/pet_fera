@@ -9,7 +9,7 @@ class WildAnimal{
 
     public:
         WildAnimal(string ibama_authorization);
-        ~WildAnimal();
+        WildAnimal();
         string get_ibama_authorization();
         void set_ibama_authorization(string ibama_authorization);
         friend istream &operator>>(istream &input, WildAnimal &wild_animal);

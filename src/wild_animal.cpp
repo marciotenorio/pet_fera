@@ -1,5 +1,9 @@
 #include "wild_animal.h"
 
+WildAnimal::WildAnimal(){
+    ibama_authorization = "";
+}
+
 WildAnimal::WildAnimal(string ibama_authorization)
 {
     this->ibama_authorization = ibama_authorization;

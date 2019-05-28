@@ -8,7 +8,6 @@ class NativeAnimal: public WildAnimal {
     protected:
         string uf_origin;
         string authorization;
-        string type = "Nativo";
 
     public:
         NativeAnimal(string uf_origin, string authorization);

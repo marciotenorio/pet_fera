@@ -7,7 +7,7 @@ class Bird: public Animal {
         double wingspan;
         
         Bird(double nozzle_size_cm, double wingspan);
-        //~Bird();
+        Bird();
     public:
         double get_nozzle_size_cm();
         void set_nozzle_size_cm(double nozzle_size_cm);

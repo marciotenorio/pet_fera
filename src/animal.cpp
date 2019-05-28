@@ -1,6 +1,18 @@
 #include "animal.h"
 #include <iostream>
 
+Animal::Animal(){
+    id = 0;
+    class_ = "";
+    scientific_name = "";
+    gender = '\0';
+    size = 0;
+    diet = "";
+    baptismal_name = "";
+    veterinary_id = 0;
+    handler_id = 0;
+}
+
 Animal::Animal(
     int id,
     string class_,
