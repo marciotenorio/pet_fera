@@ -6,8 +6,8 @@
 using namespace std;
 
 
-Veterinary::Veterinary() : Employee() { /* O método construtor da classe Veterinpario herda os atributos da classe Funcionário */
-    crmv = ""; /* Adicionamos o atributo específico da classe Veterinário */
+Veterinary::Veterinary() : Employee() {
+    crmv = "";
 }
 
 Veterinary::Veterinary(
@@ -25,15 +25,15 @@ Veterinary::Veterinary(
 
 // Veterinary::~Veterinary() {}
 
-string Veterinary::get_crmv() { /* Carregamos o valor do atributo com o método 'get' */
+string Veterinary::get_crmv() {
     return crmv;
 }
 
-void Veterinary::set_crmv(string crmv) { /* Em seguida, atribuimos ao atributo do construtor com o método 'set' */
+void Veterinary::set_crmv(string crmv) {
     this->crmv = crmv;
 }
 
-string Veterinary::format_csv() { /* Construimos a string no formado csv, separando por ';' cada atributo da classe Veterinário */
+string Veterinary::format_csv() {
     return to_string(id) + ";"
            + "Veterinário" + ";"
            + name + ";"
@@ -46,11 +46,10 @@ string Veterinary::format_csv() { /* Construimos a string no formado csv, separa
            + ";\n";
 }
 
-istream &operator>>(istream &input,  Veterinary &veterinary) { /* Usamos o operador sobrecarregado '>>' para inserior os dados no construtor cópia da classe Veterinário */
+istream &operator>>(istream &input,  Veterinary &veterinary) {
     cout << "Insira os dados do veterinário:" << endl;
     input >> static_cast<Employee &>(veterinary);
-    /* Usamos a conversão estática(static_cast) para convertemos nosso construtor do tipo Funcionário no tipo Veterinário, bem como
-    tem uma função que pende mais para boa organização e manutenção do código. */                                              
+
     cout << "Código CRMV: ";
     input >> veterinary.crmv;
 
