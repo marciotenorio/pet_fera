@@ -1,3 +1,6 @@
+#ifndef __REPTILE_H
+#define __REPTILE_H
+
 #include <string>
 #include "animal.h"
 
@@ -19,3 +22,5 @@ class Reptile: public Animal {
         friend istream &operator>>(istream &input, Reptile &reptile);
         friend ostream &operator<<(ostream &output, const Reptile &reptile);
 };
+
+#endif

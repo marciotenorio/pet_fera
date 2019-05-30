@@ -1,3 +1,6 @@
+#ifndef __WILD_ANIMAL_H
+#define __WILD_ANIMAL_H
+
 #include <iostream>
 
 using namespace std;
@@ -15,3 +18,5 @@ class WildAnimal{
         friend istream &operator>>(istream &input, WildAnimal &wild_animal);
         friend ostream &operator<<(ostream &output, const WildAnimal &wild_animal);
 };
+
+#endif

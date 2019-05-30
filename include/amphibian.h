@@ -1,3 +1,6 @@
+#ifndef __AMPHIBIAN_H
+#define __AMPHIBIAN_H
+
 #include <ctime>
 #include "animal.h"
 
@@ -18,3 +21,5 @@ class Amphibian: public Animal {
         friend istream &operator>>(istream &input, Amphibian &amphibian);
         friend ostream &operator<<(ostream &output, const Amphibian &amphibian);
 };
+
+#endif

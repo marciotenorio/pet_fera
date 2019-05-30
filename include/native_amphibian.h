@@ -1,3 +1,6 @@
+#ifndef __NATIVE_AMPHIBIAN_H
+#define __NATIVE_AMPHIBIAN_H
+
 #include "native_animal.h"
 #include "amphibian.h"
 
@@ -9,3 +12,5 @@ class NativeAmphibian: public NativeAnimal, public Amphibian {
         friend istream &operator>>(istream &input, NativeAmphibian &native_amphibian);
         friend ostream &operator<<(ostream &output, const NativeAmphibian &native_amphibian);
 };
+
+#endif

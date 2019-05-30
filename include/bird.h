@@ -1,3 +1,6 @@
+#ifndef __BIRD_H
+#define __BIRD_H
+
 #include "animal.h"
 
 
@@ -16,3 +19,5 @@ class Bird: public Animal {
         friend istream &operator>>(istream &input, Bird &bird);
         friend ostream &operator<<(ostream &output,const Bird &bird);
 };
+
+#endif

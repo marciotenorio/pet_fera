@@ -1,3 +1,6 @@
+#ifndef __EXOTIC_BIRD_
+#define __EXOTIC_BIRD_
+
 #include "exotic_animal.h"
 #include "bird.h"
 
@@ -10,3 +13,5 @@ class ExoticBird: public ExoticAnimal, public Bird {
         friend ostream &operator<<(ostream &output, const ExoticBird &exotic_bird);
         
 };
+
+#endif

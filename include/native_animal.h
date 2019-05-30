@@ -1,3 +1,6 @@
+#ifndef __NATIVE_ANIMAL_H
+#define __NATIVE_ANIMAL_H
+
 #include <string>
 #include "wild_animal.h"
 
@@ -11,7 +14,6 @@ class NativeAnimal: public WildAnimal {
 
     public:
         NativeAnimal(string uf_origin, string authorization);
-        ~NativeAnimal();
         string get_uf_origin();
         void set_uf_origin(string uf_origin);
         string get_authorization();
@@ -20,3 +22,5 @@ class NativeAnimal: public WildAnimal {
         friend istream &operator>>(istream &input, NativeAnimal &native_animal);
         friend ostream &operator<<(ostream &output, const NativeAnimal &native_animal);        
 };
+
+#endif

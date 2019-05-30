@@ -27,6 +27,10 @@ string ExoticAmphibian::format_csv(){
            + "\n";
 }
 
+//int ExoticAmphibian::get_id(){
+//    return id;
+//}
+
 istream &operator>>(istream &input, ExoticAmphibian &exotic_amphibian){  
     input >> static_cast<ExoticAnimal &>(exotic_amphibian);    
     input >> static_cast<Amphibian &>(exotic_amphibian);
