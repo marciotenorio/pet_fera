@@ -119,14 +119,14 @@ istream &operator>>(istream &input,  Employee &employee) {
 
     cout << "Especialidade: ";
     input.ignore();
-    getline(input, employee.specialty); // (1)
+    getline(input, employee.specialty); // (1) 
 
     return input; 
 }
 
 ostream &operator<<(ostream &output, const Employee &employee) {
     /* Com os valores já preenchidos pelo usuário, usamos o operador sobrecarregado '<<' para salvar na memória 
-    os dados coletados do usuário no escopo anterior*/
+    os dados coletados do usuário do escopo anterior*/
     output << "ID: " << employee.id << endl;
     output << "Nome: " << employee.name << endl;
     output << "CPF: " << employee.cpf << endl;

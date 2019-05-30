@@ -10,8 +10,8 @@
 
 using namespace std;
 
-#define CREATE_ANIMAL 1
-#define DELETE_ANIMAL 2
+#define CREATE_ANIMAL 1                         /* Atribuimos para cada  número (0-8) um texto que remete a função a ser executada baseada no valor */
+#define DELETE_ANIMAL 2                         /* digitado pelo usuário.*/        
 #define UPDATE_ANIMAL 3
 #define READ_ANIMAL 4
 #define READ_ANIMAL_BY_CLASS 5
@@ -25,30 +25,31 @@ map<string, Veterinary> veterinarians_by_cpf;
 map<int, Handler> handlers;
 map<string, Handler> handlers_by_cpf;
 
-void create_handler() {
+void create_handler() {  /* Função responsável por criar e escrever no arquivo.csv os dados de um novo tratador */
     Handler handler;
     cin >> handler;
     cout << handler << endl;
 
-    call_menu();
+    call_menu(); /* Após execução, retorno ao menu principal */
 }
 
-void create_veterinary() {
+void create_veterinary() {  /*Função responsável por criar e escrever no arquivo.csv os dados de um novo veterinário */
+    Handler handler;
     Veterinary veterinary;
     cin >> veterinary;
     cout << veterinary << endl;
 
     veterinarians.insert(pair<int, Veterinary>(veterinary.get_id(), veterinary));
 
-    call_menu();
+    call_menu(); /* Após execução, retorno ao menu principal */
 }
 
 void load_employees() {
-    ifstream infile("data/employees.csv");
+    ifstream infile("data/employees.csv"); /* Localiza o arquivo e carrega os dados dos funcionários */
     string line;
     char split_char = ';';
 
-    while (getline(infile, line)) {
+    while (getline(infile, line)) { 
         cout << line << endl;
         istringstream split(line);
         vector<string> columns;
@@ -66,7 +67,7 @@ void load_employees() {
             );
             veterinarians.insert(pair<int, Veterinary>(stoi(columns[0]), veterinary));
             veterinarians_by_cpf.insert(pair<string, Veterinary>(columns[3], veterinary));
-        } else if (columns[1].compare("Tratador") == 0) {
+        } else if (columns[1].compare("Tratador") == 0) { /* */
             Handler handler(
                 stoi(columns[0]),
                 columns[2],
@@ -92,7 +93,7 @@ void load_employees() {
     //   cout << it->first << " => " << it->second << '\n';
 }
 
-void search_veterinary_by_id() {
+void search_veterinary_by_id() {  /* Função responsável por procurar pelo veterinário, dado o ID */
     int value;
     cin >> value;
 
@@ -101,10 +102,10 @@ void search_veterinary_by_id() {
     } else {
         cout << veterinarians.find(value)->first << ": " << veterinarians.find(value)->second << endl;
     }
-    call_menu();
+    call_menu(); /* Após execução, retorno ao menu principal */
 }
 
-void search_veterinary_by_cpf() {
+void search_veterinary_by_cpf() {  /* Função responsável por procurar pelo veterinário, dado o CPF */
     string value;
     cin >> value;
 
@@ -115,10 +116,10 @@ void search_veterinary_by_cpf() {
     } else {
         cout << veterinarians_by_cpf.find(value)->first << ": " << veterinarians_by_cpf.find(value)->second << endl;
     }
-    call_menu();
+    call_menu(); /* Após execução, retorno ao menu principal */
 }
 
-void search_handler_by_id() {
+void search_handler_by_id() { /* Função responsável por procurar pelo tratador, dado o ID */
     int value;
     cin >> value;
     if (handlers.find(value) == handlers.end()) {
@@ -126,10 +127,10 @@ void search_handler_by_id() {
     } else {
         cout << handlers.find(value)->first << ": " << handlers.find(value)->second << endl;
     }
-    call_menu();
+    call_menu(); /* Após execução, retorno ao menu principal */
 }
 
-void search_handler_by_cpf() {
+void search_handler_by_cpf() { /* Função responsável por procurar pelo tratador, dado o CPF */
     string value;
     cin >> value;
 
@@ -140,10 +141,10 @@ void search_handler_by_cpf() {
     } else {
         cout << handlers_by_cpf.find(value)->first << ": " << handlers_by_cpf.find(value)->second << endl;
     }
-    call_menu();
+    call_menu(); /* Após execução, retorno ao menu principal */
 }
 
-void update_veterinary() {
+void update_veterinary() { /* Função responsável por atualizar os dados de um veterinário */
     cout << "Digite o ID do veterinário que deseja alterar:" << endl;
     int value;
     cin >> value;
@@ -158,7 +159,7 @@ void update_veterinary() {
         cout << "Veterinário com CPF: " << veterinary.get_cpf() << " atualizado com sucesso!" << endl;
     }
 
-    call_menu();
+    call_menu(); /* Após execução, retorno ao menu principal */
 }
 
 void list_employees() {
@@ -173,7 +174,7 @@ void list_employees() {
     for (map<int,Handler>::iterator it=handlers.begin(); it!=handlers.end(); ++it)
       cout << it->first << " => " << it->second << '\n';
 
-    call_menu();
+    call_menu(); /* Após execução, retorno ao menu principal */
 }
 
 void save_data() {

@@ -10,7 +10,7 @@ class Mammal: public Animal {
 
 
     public:
-        Mammal(); //Construtor da classe Passaro
+        Mammal(); //Construtor padrão da classe Passaro
         ~Mammal(); //Destrutor da classe Passaro
 
 };
