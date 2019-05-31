@@ -15,8 +15,8 @@ mostraram-se fundamentais para concebermos a implementação de boa parte do des
 Agradecemos o professor Renan Cipriano Moioli pela oportunidade de compartilhar conhecimentos na disciplina de LP1 com paciência, compostura e coerência.
 
 *Desenvolvido por:*
-Roberto Manaia dos Santos Júnior
-Márcio Tenório Júnior
+Roberto Manaia dos Santos Júnior,
+Márcio Tenório Júnior,
 Erickson Moura de Lima
 
 ## Como compilar o projeto?
