@@ -2,8 +2,6 @@
 #define __ANIMAL_H
 
 #include <string>
-#include "veterinary.h" 
-#include "handler.h"
 
 using namespace std;
 
@@ -17,13 +15,53 @@ class Animal { // Atributos protegidos da classe Animal
         double size;
         string diet;
         string baptismal_name;
-        Veterinary veterinary;
-        Handler handler;
-
+        int veterinary_id;
+        int handler_id;
+        
+        Animal();
+        Animal(
+            int id,
+            string class_, 
+            string scientific_name,  
+            char gender, 
+            double size,
+            string diet, 
+            string baptismal_name, 
+            int veterinary_id,
+            int handler_id);
+        //~Animal();
     public:
-        Animal(); //Construtor padrão da classe Animal
-        Animal(int p_id, string p_class_, string p_baptismal_name); // Construtor Cópia da classe Animal
-        ~Animal(); // Destrutor da classe Animal
+
+        int get_id();
+        void set_id(int id);
+        string get_class_();
+        void set_class_(string class_);
+        string get_scientific_name();
+        void set_scientific_name(string scientific_name);
+        char get_gender();
+        void set_gender(char gender);
+        double get_size();
+        void set_size(double size);
+        string get_diet();
+        void set_diet(string diet);
+        string get_baptismal_name();
+        void set_baptismal_name(string baptism_name);
+        int get_veterinary_id();
+        void set_veterinary_id(int veterinary_id);
+        int get_handler_id();
+        void set_handler_id(int handler_id);
+        friend istream &operator>>(istream &input, Animal &animal);
+        friend ostream &operator<<(ostream &output, const Animal &animal);
+
+          // void setup(int first, int second) {
+          //     width = first;
+          //     height = second;
+          // }
+          //
+          // virtual int area() {
+          //     return 0;
+          // }
+          // virtual int area() = 0;
 };
 
 #endif

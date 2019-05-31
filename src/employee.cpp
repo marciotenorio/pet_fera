@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Employee::Employee() { // Criação do construtor padrão
+Employee::Employee() {
     id = 0;
     name = "";
     cpf = "";
@@ -14,7 +14,7 @@ Employee::Employee() { // Criação do construtor padrão
     specialty = "";
 }
 
-Employee::Employee( // Criação do construtor cópia
+Employee::Employee(
     int id,
     string name,
     string cpf,
@@ -30,15 +30,9 @@ Employee::Employee( // Criação do construtor cópia
     this->blood_type = blood_type;
     this->rh_factor = rh_factor;
     this->specialty = specialty;
-    /*Como no construtor cópia temos os atributos com o mesmo nomes dos atributos da classe 'Funcionário', isso nos permite usar
-    o ponteiro 'this', que é passado como um argumento oculto para todas as chamadas de função de membro não estático e está disponível 
-    como uma variável local dentro do corpo de todas as funções não estáticas. Esse ponteiro é um ponteiro constante que contém o 
-    endereço de memória do objeto atual.
-    */
-
 }
 
-// Implementação dos métodos 'gets' e 'sets' da classe funcionário
+// Employee::~Employee() {}
 
 int Employee::get_id() {
     return id;
@@ -96,14 +90,13 @@ void Employee::set_specialty(string specialty) {
     this->specialty = specialty;
 }
 
-istream &operator>>(istream &input,  Employee &employee) { 
-    /* Uso do operador sobrecarregado '>>' para inserir valores aos atributos da classe Funcionário */
+istream &operator>>(istream &input,  Employee &employee) {
     cout << "ID: ";
     input >> employee.id;
 
     cout << "Nome: ";
     input.ignore();
-    getline(input, employee.name); /* (1) O dado esperado é uma string, então usamos getline() para receber essa informação e atribuir a classe funcionário.nome */
+    getline(input, employee.name);
 
     cout << "CPF: ";
     input >> employee.cpf;
@@ -119,14 +112,12 @@ istream &operator>>(istream &input,  Employee &employee) {
 
     cout << "Especialidade: ";
     input.ignore();
-    getline(input, employee.specialty); // (1) 
+    getline(input, employee.specialty);
 
-    return input; 
+    return input;
 }
 
 ostream &operator<<(ostream &output, const Employee &employee) {
-    /* Com os valores já preenchidos pelo usuário, usamos o operador sobrecarregado '<<' para salvar na memória 
-    os dados coletados do usuário do escopo anterior*/
     output << "ID: " << employee.id << endl;
     output << "Nome: " << employee.name << endl;
     output << "CPF: " << employee.cpf << endl;

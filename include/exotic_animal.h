@@ -1,14 +1,21 @@
-#include <string>
+#ifndef __EXOTIC_ANIMAL_H
+#define __EXOTIC_ANIMAL_H
+
 #include "wild_animal.h"
 
 using namespace std;
 
 
-class ExoticAnimal: public WildAnimal { // Classe Animal Exótico herda os atributos da classe Animal Selvagem
+class ExoticAnimal: public WildAnimal { 
     protected:
-        string country_origin;  // Atributo protegido da classe Animal Exótico
-
+        string country_origin;
     public:
-        ExoticAnimal(); // Construtor padrão da classe Animais Exóticos 
-        ~ExoticAnimal(); // Destrutor da classe Animais Exóticos
+        ExoticAnimal(string country_origin);
+        ExoticAnimal();
+        string get_country_origin();
+        void set_country_origin(string country_origin);
+        friend istream &operator>>(istream &input, ExoticAnimal &exotic_animal);
+        friend ostream &operator<<(ostream &output, const ExoticAnimal &exotic_animal);
 };
+
+#endif

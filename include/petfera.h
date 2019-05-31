@@ -1,12 +1,34 @@
+#ifndef __PETFERA_H
+#define __PETFERA_H
+
 #include <iostream>
 
 using namespace std;
 
 
-void create_handler(); // Registrar um tratador
+void create_handler();
 
-void create_veterinary(); // Registrar um veterinário
+void create_veterinary();
 
-void menu(); // Menu principal
+void create_exotic_amphibian();
 
-void call_menu(); // Voltar ao menu principal
+void create_exotic_bird();
+
+void create_exotic_mammal();
+
+void create_exotic_reptile();
+
+void create_native_amphibian();
+
+void create_native_bird();
+
+void create_native_mammal();
+
+void create_native_reptile();
+
+void menu();
+
+void call_menu();
+
+
+#endif

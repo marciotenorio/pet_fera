@@ -1,3 +1,6 @@
+#ifndef __REPTILE_H
+#define __REPTILE_H
+
 #include <string>
 #include "animal.h"
 
@@ -9,7 +12,15 @@ class Reptile: public Animal { // Classe Réptil herda os atributos da classe An
         bool venomous; //Atributo inerente a classe Réptil
         string venom_type; //Atributo inerente a classe Réptil
 
+        Reptile(bool venomous, string venom_type);
+        Reptile();
     public:
-        Reptile(); //Construtor da classe Réptil
-        ~Reptile(); //Destrutor da classe Réptil
+        bool get_venomous();
+        void set_venomous(bool venomous);
+        string get_venom_type();
+        void set_venom_type(string venom_type);
+        friend istream &operator>>(istream &input, Reptile &reptile);
+        friend ostream &operator<<(ostream &output, const Reptile &reptile);
 };
+
+#endif

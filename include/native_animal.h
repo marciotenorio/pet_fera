@@ -1,3 +1,6 @@
+#ifndef __NATIVE_ANIMAL_H
+#define __NATIVE_ANIMAL_H
+
 #include <string>
 #include "wild_animal.h"
 
@@ -11,6 +14,14 @@ class NativeAnimal: public WildAnimal { // Classe Animal nativo herda os atribut
         string authorization;
 
     public:
-        NativeAnimal(); // Construtor padrão da classe Anfíbio Nativo
-        ~NativeAnimal(); // Destrutor da classe Anfíbio Nativo
+        NativeAnimal(string uf_origin, string authorization);
+        string get_uf_origin();
+        void set_uf_origin(string uf_origin);
+        string get_authorization();
+        void set_authorization(string authorization);
+        string get_type();
+        friend istream &operator>>(istream &input, NativeAnimal &native_animal);
+        friend ostream &operator<<(ostream &output, const NativeAnimal &native_animal);        
 };
+
+#endif

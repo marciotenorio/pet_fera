@@ -1,3 +1,6 @@
+#ifndef __MAMMAL_H
+#define __MAMMAL_H
+
 #include <string>
 #include "animal.h"
 
@@ -9,8 +12,13 @@ class Mammal: public Animal {
         string hair_color; //Atributo inerente a classe Mamifero
 
 
+        Mammal(string hair_color);
+        Mammal();
     public:
-        Mammal(); //Construtor padrão da classe Passaro
-        ~Mammal(); //Destrutor da classe Passaro
-
+        string get_hair_color();
+        void set_hair_color(string hair_color);
+        friend istream &operator>>(istream &input, Mammal &mammal);
+        friend ostream &operator<<(ostream &output, const Mammal &mammal);
 };
+
+#endif
