@@ -3,10 +3,10 @@
 
 class Bird: public Animal {
     protected:
-        double nozzle_size_cm;
-        double wingspan;
+        double nozzle_size_cm; //Atributo inerente a classe Passaro
+        double wingspan; //Atributo inerente a classe Passaro
 
     public:
-        Bird();
-        ~Bird();
+        Bird(); //Construtor padrão da classe Passaro
+        ~Bird(); //Destrutor da classe Passaro
 };

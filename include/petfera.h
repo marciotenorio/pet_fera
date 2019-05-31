@@ -3,10 +3,10 @@
 using namespace std;
 
 
-void create_handler();
+void create_handler(); // Registrar um tratador
 
-void create_veterinary();
+void create_veterinary(); // Registrar um veterinário
 
-void menu();
+void menu(); // Menu principal
 
-void call_menu();
+void call_menu(); // Voltar ao menu principal

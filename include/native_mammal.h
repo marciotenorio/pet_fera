@@ -2,8 +2,8 @@
 #include "mammal.h"
 
 
-class NativeMammal: public NativeAnimal, public Mammal {
+class NativeMammal: public NativeAnimal, public Mammal { // Classe Mamífero Nativo herda os atributos da classe Animal Nativo e da classe Mamífero
     public:
-        NativeMammal();
-        ~NativeMammal();
+        NativeMammal(); // Construtor padrão da classe Mamífero Nativo
+        ~NativeMammal(); // Destrutor da classe Mamífero Nativo
 };

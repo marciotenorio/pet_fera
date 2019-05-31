@@ -2,13 +2,13 @@
 #define __ANIMAL_H
 
 #include <string>
-#include "veterinary.h"
+#include "veterinary.h" 
 #include "handler.h"
 
 using namespace std;
 
 
-class Animal {
+class Animal { // Atributos protegidos da classe Animal
     protected:
         int id;
         string class_;
@@ -21,19 +21,9 @@ class Animal {
         Handler handler;
 
     public:
-        Animal();
-        Animal(int p_id, string p_class_, string p_baptismal_name);
-        ~Animal();
-
-          // void setup(int first, int second) {
-          //     width = first;
-          //     height = second;
-          // }
-          //
-          // virtual int area() {
-          //     return 0;
-          // }
-          // virtual int area() = 0;
+        Animal(); //Construtor padrão da classe Animal
+        Animal(int p_id, string p_class_, string p_baptismal_name); // Construtor Cópia da classe Animal
+        ~Animal(); // Destrutor da classe Animal
 };
 
 #endif

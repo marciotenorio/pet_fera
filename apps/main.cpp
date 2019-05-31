@@ -2,7 +2,7 @@
 
 
 int main(int argc, char const *argv[]) {
-    menu();
+    menu();//Chamada do menu principal
 
     return 0;
 }

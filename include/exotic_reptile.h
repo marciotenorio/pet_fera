@@ -2,8 +2,8 @@
 #include "reptile.h"
 
 
-class ExoticReptile: public ExoticAnimal, public Reptile {
+class ExoticReptile: public ExoticAnimal, public Reptile { // Classe Réptil Exótico herda os atributos da classe Animal Exótico
     public:
-        ExoticReptile();
-        ~ExoticReptile();
+        ExoticReptile(); // Construtor padrão da classe Réptil Exótico
+        ~ExoticReptile(); // Destrutor da classe Réptil Exótico
 };
