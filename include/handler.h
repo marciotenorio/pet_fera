@@ -13,7 +13,7 @@ class Handler: public Employee { // Classe Tratador herda os atributos da classe
         short security_level;
 
     public:
-        Handler();
+        Handler(); /* Construtor padrão */
         Handler(
             int id,
             string name,
@@ -25,6 +25,7 @@ class Handler: public Employee { // Classe Tratador herda os atributos da classe
             short security_level
         );
         // ~Handler();
+        /* Atributos da classe Tratador adicionados ao construtor */
         short get_security_level();
         void set_security_level(short security_level);
         string format_csv();

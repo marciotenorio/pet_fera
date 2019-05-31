@@ -1,7 +1,7 @@
 #include "amphibian.h"
 #include <iostream>
 
-Amphibian::Amphibian():Animal(){
+Amphibian::Amphibian():Animal(){ /* Herda dos atributos da classe Animal */
     total_seedlings = 0;
     last_molt = "";
 }

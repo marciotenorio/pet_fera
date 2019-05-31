@@ -6,7 +6,7 @@
 using namespace std;
 
 
-class Animal { // Atributos protegidos da classe Animal
+class Animal { /* Atributos protegidos da classe Animal */
     protected:
         int id;
         string class_;
@@ -18,7 +18,7 @@ class Animal { // Atributos protegidos da classe Animal
         int veterinary_id;
         int handler_id;
         
-        Animal();
+        Animal(); /* Construtor Padrão */
         Animal(
             int id,
             string class_, 
@@ -31,6 +31,7 @@ class Animal { // Atributos protegidos da classe Animal
             int handler_id);
         //~Animal();
     public:
+        /* Métodos 'get' e 'set'  */
 
         int get_id();
         void set_id(int id);

@@ -4,7 +4,7 @@
 #include "animal.h"
 
 
-class Bird: public Animal {
+class Bird: public Animal { /* Herda dos atributos da classe Animal */
     protected:
         double nozzle_size_cm;
         double wingspan;

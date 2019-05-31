@@ -5,7 +5,7 @@
 #include "amphibian.h"
 
 
-class ExoticAmphibian: public ExoticAnimal, public Amphibian {
+class ExoticAmphibian: public ExoticAnimal, public Amphibian { /* Anfíbio exótico herda os atributos da classe anfíbio*/
     public:
         ExoticAmphibian();
         string format_csv();

@@ -7,13 +7,11 @@
 using namespace std;
 
 
-class Mammal: public Animal {
+class Mammal: public Animal { /* A classe Mamífero herda os atributos da classe Animal */
     protected:
         string hair_color; //Atributo inerente a classe Mamifero
-
-
         Mammal(string hair_color);
-        Mammal();
+        Mammal(); /* Construtor Padrão */
     public:
         string get_hair_color();
         void set_hair_color(string hair_color);

@@ -6,7 +6,7 @@
 using namespace std;
 
 
-class ExoticAnimal: public WildAnimal { 
+class ExoticAnimal: public WildAnimal {  /* Animal exótico herda os atributos da classe Animal selvagem*/
     protected:
         string country_origin;
     public:

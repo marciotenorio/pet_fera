@@ -9,14 +9,8 @@ class Amphibian: public Animal {
     protected:
         int total_seedlings; //Atributos inerentes a classe anfibios
         string last_molt; //Atributos inerentes a classe anfibios
-
-    public:
-        Amphibian(); //Construtor padrão da classe anfibios
-        int total_seedlings;
-        string last_molt;
-        
-        Amphibian(int total_seedlings, string last_molt);
-        Amphibian();
+    Amphibian(); //Construtor padrão da classe anfibios
+    Amphibian(int total_seedlings, string last_molt);
 
     public:
         int get_total_seedlings();
